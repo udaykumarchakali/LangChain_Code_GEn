@@ -94,7 +94,7 @@ def load_pdf_into_vectorstore(file):
         "context": retriever
     })
 
-    # Generate answer using retrieved documents
+    # Generate answer using retrieved documents number into textin
     qa_chain = retrieval_chain | RunnablePassthrough.assign(
         answer=(
             RunnableLambda(
@@ -109,6 +109,7 @@ def load_pdf_into_vectorstore(file):
     )
 
     return qa_chain, "Document uploaded successfully. You can chat now."
+
 
 
 # -------------------- CHAT FUNCTION --------------------
